@@ -35,6 +35,8 @@ def animate(i, vc, im, line, fig, axes, times, sums, bool_mask):
     fig.canvas.draw()
     return im
 
+# Show the same interface as the transit demo but without the
+# lightcurve to align the camera with the "star"
 def align(time=np.inf):
     try:
         vc = cv2.VideoCapture(0)
@@ -74,7 +76,8 @@ def align(time=np.inf):
         plt.close()
         
         vc = None
-    
+
+# Show the transit demo, and allow it to be run for only some length of time.
 def demonstrate(time=np.inf):
     try:
         vc = cv2.VideoCapture(0)
